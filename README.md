@@ -16,6 +16,5 @@ Guida per spiegare le Opere dei Musei Civici agli Adulti.
 ---
 
 # To-Do
-- Completare la scrittura della guida principale.
 - Fare la revsione del testo nella guida principale.
 - Creare una versione della guida principale contenente le immagini delle opere spiegate.
