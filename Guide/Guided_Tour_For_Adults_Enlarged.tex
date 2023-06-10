@@ -14,6 +14,10 @@
 \titleformat*{\section}{\LARGE\bfseries}
 \titleformat*{\subsection}{\Large\bfseries}
 
+% Remove first empty page
+\usepackage{atbegshi}
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
 % License
 \usepackage[
 type={CC},
@@ -32,6 +36,8 @@ version={4.0},
 		\date{}
 	
 		\maketitle
+		% Adjust page counter
+		\setcounter{page}{1}
 		\newpage
 	
 		\tableofcontents

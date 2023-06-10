@@ -6,6 +6,10 @@
 % Stop hyphenation
 \usepackage[none]{hyphenat}
 
+% Remove first empty page
+\usepackage{atbegshi}
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+
 % Justifying text
 \emergencystretch 3em
 
@@ -24,6 +28,8 @@ version={4.0},
 			\date{}
 	
 			\maketitle
+			% Adjust page counter
+			\setcounter{page}{1}
 			\newpage
 	
 			\tableofcontents
