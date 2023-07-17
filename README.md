@@ -3,7 +3,7 @@ Guida per spiegare le Opere dei Musei Civici agli Adulti.
 
 ---
 
-# State
+# Status
 [![Test Compilazione](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/actions/workflows/LaTeX_Action.yml/badge.svg?branch=main&event=push)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/actions/workflows/LaTeX_Action.yml)
 
 ---
