@@ -8,6 +8,11 @@ Guida per spiegare le Opere dei Musei Civici agli Adulti.
 
 ---
 
+# In caso di nessuna Release
+- Scarica i [documenti](https://nightly.link/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/workflows/LaTeX_Action/main/Relazione.zip) dimostrativi
+
+---
+
 # License
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
