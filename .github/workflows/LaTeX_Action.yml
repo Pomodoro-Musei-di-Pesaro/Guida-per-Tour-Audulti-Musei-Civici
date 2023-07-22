@@ -4,13 +4,23 @@ jobs:
   build_latex:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Git repository
+      - name: Download file della Repo
         uses: actions/checkout@v3
-        with:
-          sparse-checkout: .
-      - name: Compilazione dei file della Guida senza immagini
+      - name: Compilazione del file della Relazione
         uses: xu-cheng/latex-action@v2
         with: # insert here files to compile
-          root_file: "Guide/*.tex"
-          glob_root_file: true
-      - run: echo "Tutto Okay :)"
+          working_directory: Guide
+          root_file: |
+            Guided_Tour_For_Adults.tex
+            Guided_Tour_For_Adults_Enlarged.tex
+      - name: Ridenominazione files
+        run: |
+          mv Guide/Guided_Tour_For_Adults.pdf Guide/Guida_per_Tour_Adulti_Musei_Civici.pdf
+          mv Guide/Guided_Tour_For_Adults_Enlarged.pdf Guide/Guida_per_Tour_Adulti_Musei_Civici_Ingrandita.pdf
+      - name: Caricamento della Release temporanea
+        uses: actions/upload-artifact@v3
+        with: 
+          name: Relazione
+          path: |
+            Guide/Guida_per_Tour_Adulti_Musei_Civici.pdf
+            Guide/Guida_per_Tour_Adulti_Musei_Civici_Ingrandita.pdf
