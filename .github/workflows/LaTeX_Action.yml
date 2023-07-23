@@ -20,7 +20,7 @@ jobs:
       - name: Caricamento della Release temporanea
         uses: actions/upload-artifact@v3
         with: 
-          name: Relazione
+          name: Tour Bambini Musei Civici
           path: |
             Guide/Guida_per_Tour_Adulti_Musei_Civici.pdf
             Guide/Guida_per_Tour_Adulti_Musei_Civici_Ingrandita.pdf
