@@ -11,8 +11,8 @@ Guida per spiegare le Opere dei Musei Civici agli Adulti.
 ---
 
 # Analytics
-[![views](https://raw.githubusercontent.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/traffic/traffic-Guida-per-Tour-Audulti-Musei-Civici/views.svg)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/tree/traffic#-Guida-per-Tour-Audulti-Musei-Civici)
-[![clones](https://raw.githubusercontent.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/traffic/traffic-Guida-per-Tour-Audulti-Musei-Civici/clones.svg)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/tree/traffic#-Guida-per-Tour-Audulti-Musei-Civici)
+[![views](https://raw.githubusercontent.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/traffic/traffic-Guida-per-Tour-Audulti-Musei-Civici/views.svg)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici)
+[![clones](https://raw.githubusercontent.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/traffic/traffic-Guida-per-Tour-Audulti-Musei-Civici/clones.svg)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici)
 [![Github all releases](https://img.shields.io/github/downloads/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/total.svg)](https://GitHub.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/releases/)
 
 
