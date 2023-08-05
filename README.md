@@ -1,10 +1,30 @@
 # Guida per il tour degli adulti presso i Musei Civici di Pesaro
 Guida per spiegare le Opere dei Musei Civici agli Adulti.
 
+[![made-with-latex](https://img.shields.io/badge/Made%20with-LaTeX-1f425f.svg)](https://www.latex-project.org/)
+
 ---
 
 # Status
 [![Test Compilazione](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/actions/workflows/LaTeX_Action.yml/badge.svg?branch=main&event=push)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/actions/workflows/LaTeX_Action.yml)
+
+---
+
+# Analytics
+[![views](https://raw.githubusercontent.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/traffic/traffic-Guida-per-Tour-Audulti-Musei-Civici/views.svg)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/tree/traffic#-Guida-per-Tour-Audulti-Musei-Civici)
+[![clones](https://raw.githubusercontent.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/traffic/traffic-Guida-per-Tour-Audulti-Musei-Civici/clones.svg)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/tree/traffic#-Guida-per-Tour-Audulti-Musei-Civici)
+[![Github all releases](https://img.shields.io/github/downloads/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/total.svg)](https://GitHub.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/releases/)
+
+
+---
+
+# Details
+[![GitHub commits](https://badgen.net/github/commits/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici)](https://GitHub.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/commit/)
+[![GitHub stars](https://badgen.net/github/stars/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici)](https://GitHub.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/stargazers/)
+[![GitHub issues](https://img.shields.io/github/issues/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici.svg)](https://GitHub.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/issues/)
+[![GitHub issues-closed](https://img.shields.io/github/issues-closed/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici.svg)](https://GitHub.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/issues?q=is%3Aissue+is%3Aclosed)
+[![GitHub forks](https://badgen.net/github/forks/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/)](https://GitHub.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/network/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici.svg)](https://GitHub.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/pull/)
 
 ---
 
