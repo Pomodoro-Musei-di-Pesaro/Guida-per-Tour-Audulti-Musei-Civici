@@ -6,6 +6,7 @@ Guida per spiegare le Opere dei Musei Civici agli Adulti.
 ---
 
 # Status
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1ef075dba4a14be5ad7590d05c852950)](https://app.codacy.com/gh/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![Test Compilazione](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/actions/workflows/LaTeX_Action.yml/badge.svg?branch=main&event=push)](https://github.com/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/actions/workflows/LaTeX_Action.yml)
 
 ---
