@@ -21,7 +21,7 @@ jobs:
           mv Guide/Guided_Tour_For_Adults.pdf Guide/Guida_per_Tour_Adulti_Musei_Civici.pdf
           mv Guide/Guided_Tour_For_Adults_Enlarged.pdf Guide/Guida_per_Tour_Adulti_Musei_Civici_Ingrandita.pdf
       - name: Caricamento della Release temporanea
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with: 
           name: Tour Bambini Musei Civici
           path: |
