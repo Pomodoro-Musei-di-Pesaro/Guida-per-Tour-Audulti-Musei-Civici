@@ -6,6 +6,9 @@
 % To avoid GitHub Action error
 \usepackage{hyperref}
 
+% manage minipage
+\usepackage{tabularx}
+
 % Stop hyphenation
 \usepackage[none]{hyphenat}
 
@@ -22,6 +25,66 @@
 
 % Justifying text
 \emergencystretch 3em
+
+%Command to zoom in --- This isn't the right algorithm to do that.
+\usepackage{mwe}
+\makeatletter
+\newsavebox\zb@x
+\newcounter{z@@m}
+\usepackage{calc}
+\newdimen\B@r\newdimen\P@r
+\newdimen\@zw\newdimen\@zh\newdimen\@zd
+
+\newcommand{\zoombox}[2][0]{%
+	\leavevmode%
+	\sbox\zb@x{#2}%
+	\setlength\B@r{1pt*\ratio{\wd\zb@x}{\ht\zb@x+\dp\zb@x}}%
+	\setlength\P@r{1pt*\ratio{\paperwidth}{\paperheight}}%
+	\ifdim\B@r>\P@r\relax%
+	\setlength\@zw{\wd\zb@x}\setlength\@zh{\@zw*\ratio{\paperheight}{\paperwidth}}%
+	\setlength\@zd{(\@zh-\ht\zb@x-\dp\zb@x)*\real{0.5}+\dp\zb@x}%
+	\setlength\@zh{\@zh-\@zd}%
+	\else%
+	\setlength\@zh{\ht\zb@x+\dp\zb@x}%
+	\setlength\@zw{\@zh*\ratio{\paperwidth}{\paperheight}}%
+	\setlength\@zh{\ht\zb@x}\setlength\@zd{\dp\zb@x}%
+	\fi%
+	\makebox[0pt][l]{\makebox[\wd\zb@x][c]{\makebox[\@zw][l]{%
+				\pdfdest name {zbfs\thez@@m} fitr
+				width  \@zw\space
+				height \@zh\space
+				depth  \@zd\space
+	}}}%
+	\pdfdest name {zb\thez@@m} fitr
+	width  \wd\zb@x\space
+	height \ht\zb@x\space
+	depth  \dp\zb@x\space
+	\immediate\pdfannot 
+	width  \wd\zb@x\space
+	height \ht\zb@x\space
+	depth  \dp\zb@x\space
+	{%
+		/Subtype/Link/H/N
+		/Border [0 0 #1 [1 2]]
+		/A <<
+		/S/JavaScript
+		/JS (
+		if(typeof(zoomed)=='undefined'||!zoomed){
+			var lastView=this.viewState;
+			if(app.fs.isFullScreen) this.gotoNamedDest('zbfs\thez@@m');
+			else this.gotoNamedDest('zb\thez@@m');
+			zoomed=true;
+		}else{
+			this.viewState=lastView;
+			zoomed=false;
+		}
+		)
+		>>
+	}%
+	\usebox{\zb@x}%
+	\stepcounter{z@@m}%
+} 
+\makeatother
 
 % License
 \usepackage[
@@ -60,9 +123,12 @@ version={4.0},
 		Mengaroni è una delle più importanti figure nell'ambito della ceramica tra la seconda metà dell'Ottocento e gli inizi del Novecento; il suo stile è caratterizzato dal "revival" nei confronti delle opere rinascimentali, tipico dell'epoca.
 		La sua formazione avvenne attraverso lo studio delle collezioni ceramiche presenti nei Musei Civici e la loro riproduzione, per poi creare opere proprie attraverso lo stile dell'istoriato e delle grottesche.
 		
+		\vspace*{0.2cm}
+		
 		\begin{minipage}{\linewidth}
+			\vspace*{0.2cm}
 			\centering
-			\zoombox{\includegraphics[]{Mengaroni_Ferruccio-Medusa.jpg}}
+			\zoombox{\includegraphics[scale=1.5]{Mengaroni_Ferruccio-Medusa.jpg}}
 			\captionof{figure}{Mengaroni Ferruccio - Medusa.}
 		\end{minipage}
 		
@@ -80,6 +146,7 @@ version={4.0},
 		Nella parte superiore della Pala, detta Cimasa, Napoleone trafugò parte del dipinto per poterne conservare il ricordo. Successivamente, grazie all'intervento dello scultore Antonio Canova, furono restituite all'Italia varie di queste opere trafugate, le quali sono ora conservate nei Musei Vaticani.\\
 		L'opera fu oggetto di vari restauri, tra i quali quello del 2008 in preparazione per l'esposizione in una mostra all'interno delle Scuderie del Quirinale. Per la speciale occasione venne riunita alla Cimasa la parte dove veniva raffigurata l’Imbalsamazione di Cristo.\\
 		Lo stile di Giovanni Bellini (artista la cui formazione avvenne nella bottega veneta del padre) è caratterizzato dal rendere i personaggi sacri più realistici e umani che divini, attraverso la tecnica ad olio sviluppata dai Fiamminghi nelle Fiandre.
+		\newpage
 		
 		\begin{minipage}{\linewidth}
 			\centering
@@ -117,7 +184,8 @@ version={4.0},
 		
 		\begin{minipage}{\linewidth}
 			\centering
-			\zoombox{\includegraphics[]{Jacobello_Del_Fiore-Beata_Michelina_e_Santi.jpg}}
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=0.5]{Jacobello_Del_Fiore-Beata_Michelina_e_Santi.jpg}}
 			\captionof{figure}{Beata Michelina e Santi di Jacobello Del Fiore}
 		\end{minipage}
 		
@@ -132,7 +200,8 @@ version={4.0},
 		
 		\begin{minipage}{\linewidth}
 			\centering
-			\zoombox{\includegraphics[]{Bellinzoni_Giovanni_Antonio_da_Pesaro-San_Terenzio.jpg}}
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=0.2]{Bellinzoni_Giovanni_Antonio_da_Pesaro-San_Terenzio.jpg}}
 			\captionof{figure}{San Terenzio}
 		\end{minipage}
 		
@@ -142,8 +211,9 @@ version={4.0},
 		L'opera ebbe un discreto successo nel Trecento; venne notata dal celebre Rossini, il quale amava le decorazioni in oro, la rappresentazione di gioielli all'interno dell'opera e il colore rosso vermiglio presente nei panneggi (il colore era ottenuto dalla particolare lavorazione di alcuni insetti, detti "vermi", per questo motivo si chiama "vermiglio").
 		
 		\begin{minipage}{\linewidth}
+			\vspace*{0.2cm}
 			\centering
-			\zoombox{\includegraphics[]{Michele_di_Matteo-Sogno_della_Vergine.jpg}}
+			\zoombox{\includegraphics[scale=0.4]{Michele_di_Matteo-Sogno_della_Vergine.jpg}}
 			\captionof{figure}{Sogno della Vergine}
 		\end{minipage}
 		
@@ -159,8 +229,9 @@ version={4.0},
 		Nel 1541 Guidobaldo II della Rovere diede nuova importanza alla lavorazione della ceramica e fece rinascere questa arte nel Cinquecento a Urbino.
 		
 		\begin{minipage}{\linewidth}
+			\vspace*{0.2cm}
 			\centering
-			\zoombox{\includegraphics[]{Lanfranco_Girolamo_dalle_Gabicce-caccia_al_cinghiale_calidonio.jpg}}
+			\zoombox{\includegraphics[scale=0.5]{Lanfranco_Girolamo_dalle_Gabicce-caccia_al_cinghiale_calidonio.jpg}}
 			\captionof{figure}{Caccia al cinghiale calidonio}
 		\end{minipage}
 		
@@ -171,7 +242,8 @@ version={4.0},
 		
 		\begin{minipage}{\linewidth}
 			\centering
-			\zoombox{\includegraphics[]{Ercole_e_Anteo_Caco_a_terra_senza_vita.jpg}}
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=1.5]{Ercole_e_Anteo_Caco_a_terra_senza_vita.jpg}}
 			\captionof{figure}{Ercole e Anteo Caco a terra senza vita}
 		\end{minipage}
 		
@@ -182,7 +254,8 @@ version={4.0},
 		
 		\begin{minipage}{\linewidth}
 			\centering
-			\zoombox{\includegraphics[]{Faustina-Pittore_in_Casteldurante.jpg}}
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=0.5]{Faustina-Pittore_in_Casteldurante.jpg}}
 			\captionof{figure}{Ercole e Anteo Caco a terra senza vita}
 		\end{minipage}
 		
@@ -200,7 +273,8 @@ version={4.0},
 		
 		\begin{minipage}{\linewidth}
 			\centering
-			\zoombox{\includegraphics[]{Pittore_del_Giudizio_di_Paride-san_Girolamo_penitente.jpg}}
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=1.2]{Pittore_del_Giudizio_di_Paride-san_Girolamo_penitente.jpg}}
 			\captionof{figure}{Pittore del Giudizio di Paride - San Girolamo Penitente}
 		\end{minipage}
 		
@@ -212,6 +286,13 @@ version={4.0},
 		Si dice che compose persino un’opera in versi dedicata al duca Francesco Maria I della Rovere.\\
 		Frequentemente traeva spunto da stampe dei grandi maestri del Rinascimento: Raffaello, Taddeo Zuccari e Battista Franco, inserendo le suddette figure (com'era tipico dello stile Istoriato Roveresco) all'interno di paesaggi d'invenzione dell'artista.
 		
+		\begin{minipage}{\linewidth}
+			\centering
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=1.5]{Adorazione_dei_pastori.jpg}}
+			\captionof{figure}{Adorazione dei pastori}
+		\end{minipage}
+		
 		\section{Sala arredi e sculture della collezione Mosca}
 		In questa sala è presente la collezione di oggetti ed arredi del periodo tra Ottocento e Novecento appartenenti alla marchesa Toschi Mosca, di cui possiamo ammirare il ritratto appena si entra all'interno del Museo, sulla destra, oltrepassando il punto di accettazione.
 		La marchesa era un'amante del gusto antiquario e qui esposta in maniera permanente, come da lei voluto, possiamo ammirare la sua collezione di oggetti di uso domestico personale. L'intento della marchesa era infatti quello di creare un Museo d'arte industriale accessibile al pubblico a Pesaro, dove ella stessa viveva, per far sì che altri giovani artisti si potessero ispirare alle bellezze del passato per creare i loro capolavori.
@@ -220,11 +301,35 @@ version={4.0},
 		In questa sala dedicata agli arredi della marchesa possiamo ammirare i pregiati Stipi con Vedute di Roma e ne possiamo notare l'usanza di decorare queste cassettiere di uso nobiliare con delle placche raffiguranti vedute dell'Urbe. Questa usanza è fatta risalire agli anni sessanta del Seicento e serviva ai nobili per far sfoggio dei loro costosi viaggi con gli ospiti.
 		In questi stipi in particolare sono ritratte le stupende vedute di Roma, dipinte con l'utilizzo delle tempere su pergamena in maniera estremamente realistica e con minuzia di particolari dallo strasburghese Johann Wilhelm Baur, pittore del periodo barocco presente a Roma, che collaborò con Giacomo Herman, ebanista, tra il 1665 e il 1667 per la realizzazione degli stipi. Possiamo notare, osservandoli con attenzione, la firma dell'ebanista all'interno del mobile.
 		
+		\begin{minipage}{\linewidth}
+			\vspace*{0.2cm}
+			\begin{tabularx}{\linewidth}{XX}
+				{
+					\begin{minipage}{\linewidth}
+						\zoombox{\includegraphics[scale=0.35]{Vedute_di_Roma79.jpg}}
+						\captionof{figure}{Stipo con vedute di Roma.}
+					\end{minipage}
+				}&{
+					\begin{minipage}{\linewidth}
+						\hspace*{0.5cm}
+						\zoombox{\includegraphics[scale=0.35]{Vedute_di_Roma80.jpg}}
+						\captionof{figure}{Stipo con vedute di Roma.}
+					\end{minipage}
+				}
+			\end{tabularx}
+		\end{minipage}
+		
 		\subsection{Orologio Notturno di Andrea Nattan}
 		L'Orologio Notturno è un oggetto di arredo domestico-funzionale che la marchesa custodiva nella propria camera da letto; le permetteva di leggere l'ora attraverso la luce di una candela che illuminava un forellino sorretto da un'illustrazione di un putto nel mobile (la candela veniva periodicamente sostituita dalla servitù). La marchesa si dilettava così guardando il bel mobile la sera, poiché soffriva d'insonnia, ed esso la aiutava a comprendere quando fosse giunto il momento di alzarsi o meno.
 		L'oggetto d'arredo è una grande cassa in legno pregiato di epoca barocca (XVII secolo).
 		La scritta sorretta in primo piano dall'angioletto recita: "Volat irreparabile Tempus", che significa "Il tempo vola inesorabilmente", ed era attorniato dall'allegoria delle quattro stagioni, sovrastate dalla figura di un uomo barbuto alato che rappresentava appunto il Tempo.\\
 		Fanno parte inoltre della collezione della marchesa anche oggetti in madreperla, avorio, uno specchio di pregevole fattura in vetro soffiato di Murano (Venezia) con decorazioni incise in argento a motivo di uva, varie cornici di epoca barocca ed infine varie sculture.
+		
+		\begin{minipage}{\linewidth}
+			\centering
+			\zoombox{\includegraphics[scale=0.4]{Nattan_F.Andrea-orologio_notturno.jpg}}
+			\captionof{figure}{\centering{Orologio~notturno.}}
+		\end{minipage}
 		
 		\section{Sforza signori di Pesaro nella seconda metà del Quattrocento}
 		Lo stemma con leone rampante e ramo di cotogno (mela cotogna, ramo di famiglia), tipico della casata, è presente sulle opere lapidee (tombali) derivate dai resti di edifici cittadini ed eseguite da maestranze venete, lombarde e toscane; questi reperti testimoniano la vivacità culturale della famiglia Sforza.
@@ -241,6 +346,13 @@ version={4.0},
 		Questo dipinto proviene dalla chiesa di S. Michele Arcangelo a Lamoli; prima di far parte della collezione Mosca era appartenuto alla nobile famiglia Passionei di Fossombrone.\\
 		L'artista lavorò anche a Pesaro presso Maria I della Rovere, con il quale partecipò al cantiere degli affreschi di Villa Imperiale sul colle S. Bartolo, magnifico esempio rinascimentale di architettura suburbana.
 		
+		\begin{minipage}{\linewidth}
+			\centering
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=0.1]{Raffaellino_Del_Colle-Adorazione_dei_pastori.jpg}}
+			\captionof{figure}{\centering{Raffaellino Del Colle - Adorazione dei pastori}}
+		\end{minipage}
+		
 		\subsection{Adorazione del Bambino di Domenico Beccafumi (originariamente parte della collezione Ercolani-Rossini)}
 		Questo dipinto ci mostra S. Giuseppe che solleva il Bambino da terra per offrirlo all'adorazione della Vergine; alle spalle dei due sono presenti delle rovine classiche che rappresentano i tempi antichi, superati con la nascita di Cristo.
 		Questa composizione insolita fa sì che l'epoca pagana sia messa a confronto con quella cristiana.
@@ -248,14 +360,35 @@ version={4.0},
 		La particolarità insolita di questo dipinto è anche quella di mostrarci un S. Giuseppe più simile a un padre e quindi più proiettato nella dimensione dell'umano piuttosto che in quella del Divino, nell'atto di sorreggere ed aiutare il suo bambino a compiere i suoi primi passi, tra l'incespicare e il raggomitolarsi, esattamente come qualunque altro bambino.
 		L'inquieto Domenico Beccafumi fu definito pittore eccentrico dalla critica dell'epoca; era attivo a Siena a metà del Cinquecento. I suoi dipinti sono caratterizzati da una luce e dei colori morbidi e seducenti, armonia, grazia e una composizione dall'aria irreale e fiabesca, tutti canoni da lui appresi dal celebre Raffaello.
 		
+		\begin{minipage}{\linewidth}
+			\centering
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=0.1]{Beccafumi_Domenico-Adorazione_di_Gesù_Bambino.jpg}}
+			\captionof{figure}{\centering{Beccafumi Domenico - Adorazione di Gesù Bambino}}
+		\end{minipage}
+		
 		\subsection{Maddalena Osuna Giron di Federico Barocci}
 		La qui ritratta bella fanciulla, ornata al collo con una gorgiera di pizzo, era una dama spagnola, duchessa di Ossuna, di cui si era innamorato nientemeno che Francesco Maria II della Rovere. A testimonianza di ciò, come si può leggere sul retro del piccolo dipinto, l'innamoramento avvenne mentre egli si tratteneva alla corte di Spagna, segno che aveva intenzione di prenderla in moglie; questo fatto è antecedente al suo matrimonio con Lucrezia d'Este.
 		La bellezza della fanciulla viene ulteriormente sottolineata dal pittore nel rappresentarla con guance paffute e rosee; la liquidità degli occhi grigi e la bocca di color vermiglio le conferiscono inoltre fascino e vaghezza.
 		Il dipinto è attribuibile alla scuola baroccesca, il cui capostipite era Federico Barocci, amico della corte roveresca, il cui stile divenne modello artistico e culturale dell'epoca.
 		
+		\begin{minipage}{\linewidth}
+			\centering
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=0.25]{Barocci_Federico-Ritratto_di_Maddalena_Osuna_Giron.jpg}}
+			\captionof{figure}{\centering{Barocci Federico - Ritratto di Maddalena Osuna Giron}}
+		\end{minipage}
+		
 		\section{Sala del Mito e Devozione}
 		\subsection{La Caduta dei Giganti di Guido Reni}
 		Questo dipinto è uno tra i più iconici presenti nel museo e rappresenta Giove (o Zeus) nell'atto di cacciare i giganti dall'Olimpo...
+		
+		\begin{minipage}{\linewidth}
+			\centering
+			\vspace*{0.2cm}
+			\zoombox{\includegraphics[scale=0.1]{Reni_Guido-Caduta_dei_giganti.jpg}}
+			\captionof{figure}{\centering{Reni Guido - Caduta dei giganti}}
+		\end{minipage}
 		
 		\vspace*{\fill}
 		% Print license shield
