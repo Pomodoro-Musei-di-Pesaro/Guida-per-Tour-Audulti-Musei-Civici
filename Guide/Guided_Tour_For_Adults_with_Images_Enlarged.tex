@@ -31,6 +31,12 @@
 % Justifying text
 \emergencystretch 3em
 
+% Adjust paragraph.
+\usepackage{changepage}
+
+% Coloring links
+\usepackage{xcolor}
+
 %Command to zoom in --- This isn't the right algorithm to do that.
 \usepackage{mwe}
 \makeatletter
@@ -109,6 +115,17 @@ version={4.0},
 		\date{}
 		
 		\maketitle
+		\begin{adjustwidth}{-30mm}{-30mm}
+			\vspace*{\fill}
+			\centering
+			\fboxrule=2pt
+			\fbox
+			{
+				\begin{minipage}{0.85\linewidth}
+					Il seguente documento è ottimizzato per la visualizzazione digitale con \href{https://get.adobe.com/it/reader/}{\textcolor{blue}{Adobe~Acrobat~Reader}}.  
+				\end{minipage}
+			}
+		\end{adjustwidth}
 		
 		% Adjust page counter
 		\setcounter{page}{1}
