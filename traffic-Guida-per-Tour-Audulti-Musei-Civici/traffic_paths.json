@@ -2,8 +2,8 @@
   {
     "path": "/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/pulls",
     "title": "/pulls",
-    "count": 5,
-    "uniques": 5
+    "count": 6,
+    "uniques": 6
   },
   {
     "path": "/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/blob/main/CONTRIBUTING.md",
@@ -14,18 +14,6 @@
   {
     "path": "/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/blob/main/SUPPORT.md",
     "title": "/blob/main/SUPPORT.md",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/commits/main/README.md",
-    "title": "/commits/main/README.md",
-    "count": 1,
-    "uniques": 1
-  },
-  {
-    "path": "/Pomodoro-Musei-di-Pesaro/Guida-per-Tour-Audulti-Musei-Civici/issues",
-    "title": "/issues",
     "count": 1,
     "uniques": 1
   }
